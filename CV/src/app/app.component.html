@@ -1,0 +1,13 @@
+<div>
+  <button (click)="changeLanguage(Language.en)">English</button>
+  <button (click)="changeLanguage(Language.hu)">Hungarian</button>
+</div>
+<div>
+  <p>{{ 'HELLO' | translate }}</p>
+  <p>{{ 'WELCOME' | translate }}</p>
+</div>
+
+<button mat-icon-button (click)="switchDarkMode()" [matTooltip]="themeSwitchData().tooltip">
+  <mat-icon>{{ themeSwitchData().icon }}</mat-icon>
+</button>
+<button mat-flat-button>Basic</button>

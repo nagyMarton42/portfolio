@@ -1,0 +1,55 @@
+$light-theme: mat.define-theme();
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+    ),
+  )
+);
+
+html {
+  @include mat.all-component-themes($light-theme);
+}
+
+html.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+  body {
+    background: #575757;
+    color: white;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .kr-h1,
+    .kr-h2,
+    .kr-h3,
+    .kr-h4 {
+      color: var(--theme-primary-300);
+    }
+  }
+
+  .material-primary-color {
+    color: var(--theme-primary-500);
+  }
+
+  .material-accent-color {
+    color: var(--theme-accent-500);
+  }
+
+  .material-primary-background {
+    background-color: var(--theme-primary-500);
+  }
+
+  .material-accent-background {
+    background-color: var(--theme-accent-500);
+  }
+
+  .material-warn-color {
+    color: #f44336;
+  }
+
+  .material-warn-background {
+    background-color: #f44336;
+  }
+}
