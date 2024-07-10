@@ -1,4 +1,7 @@
-import { Theme } from '../enums/theme.enum';
+export enum Theme {
+  dark = 'dark',
+  light = 'light',
+}
 
 export interface ThemeData {
   tooltip: string;
