@@ -1,0 +1,10 @@
+<mat-form-field>
+  <mat-select [value]="currentLanguage()" [hideSingleSelectionIndicator]="true">
+    <mat-select-trigger>
+      <img [src]="'/assets/languages/language-icons/' + currentLanguage() + '.svg'" />
+    </mat-select-trigger>
+    @for (language of Languages | enumToArray; track language) {
+    <mat-option (click)="changeLanguage(language)" [value]="language"><img [src]="'/assets/languages/language-icons/' + language + '.svg'" [alt]="language" /></mat-option>
+    }
+  </mat-select>
+</mat-form-field>

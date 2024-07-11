@@ -1,0 +1,16 @@
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--mdc-filled-text-field-container-color);
+  }
+  mat-toolbar {
+    padding: 0;
+    height: 100%;
+  }
+}
