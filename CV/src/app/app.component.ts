@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MainPageComponent } from './components/main-page/main-page.component';
 
 @Component({
@@ -7,5 +7,6 @@ import { MainPageComponent } from './components/main-page/main-page.component';
   styleUrl: './app.component.scss',
   standalone: true,
   imports: [MainPageComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {}

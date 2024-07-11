@@ -1,0 +1,5 @@
+<nav>
+  @for(button of buttonList; track button.fragment){
+  <app-navigation-button [label]="button.label" [fragment]="button.fragment" />
+  }
+</nav>

@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Language } from 'src/app/components/header/language-selector/language-selector.model';
@@ -16,6 +16,10 @@ export class TranslateService {
   private getInitialLanguage(): Language {
     const storedLang = localStorage.getItem('appLanguage');
     return storedLang ? (storedLang as Language) : Language.en;
+  }
+
+  initialize(): Observable<void> {
+    return this.loadTranslations(this._currentLang());
   }
 
   loadTranslations(language: Language): Observable<any> {

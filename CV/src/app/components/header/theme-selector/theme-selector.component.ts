@@ -1,4 +1,4 @@
-import { Component, computed } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -11,6 +11,7 @@ import { PageLayoutService } from './page-layout.service';
   imports: [MatTooltipModule, MatIconModule, MatButtonModule],
   templateUrl: './theme-selector.component.html',
   styleUrl: './theme-selector.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ThemeSelectorComponent {
   themeSwitchData = computed(() => {
