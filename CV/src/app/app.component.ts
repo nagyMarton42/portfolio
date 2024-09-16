@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { ScrollingService } from './shared/services/scrolling.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { MainPageComponent } from './components/main-page/main-page.component';
   styleUrl: './app.component.scss',
   standalone: true,
   imports: [MainPageComponent],
+  providers: [ScrollingService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private scrollService: ScrollingService) {}
+}

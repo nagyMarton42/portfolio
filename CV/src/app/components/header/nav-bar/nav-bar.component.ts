@@ -11,5 +11,9 @@ import { NavigationButtonData } from './nav-bar.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavBarComponent {
-  buttonList: NavigationButtonData[] = [{ label: 'about', fragment: 'about' }];
+  buttonList: NavigationButtonData[] = [
+    { label: 'about', fragment: 'aboutMe' },
+    { label: 'Technical skills', fragment: 'technicalSkills' },
+    { label: 'Professional experience', fragment: 'experience' },
+  ];
 }
