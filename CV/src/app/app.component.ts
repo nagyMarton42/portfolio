@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ScrollingService } from './shared/services/scrolling.service';
+import { ScrollDirection } from './shared/enums/config-enums';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,19 @@ import { ScrollingService } from './shared/services/scrolling.service';
   imports: [MainPageComponent],
   providers: [ScrollingService],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '(document:keydown)': 'handleKeyDown($event)',
+  },
 })
 export class AppComponent {
   constructor(private scrollService: ScrollingService) {}
+
+  handleKeyDown(event: KeyboardEvent) {
+    event.preventDefault();
+    if (event.key === 'ArrowDown') {
+      this.scrollService.scrollToNeighbor(ScrollDirection.Next);
+    } else if (event.key === 'ArrowUp') {
+      this.scrollService.scrollToNeighbor(ScrollDirection.Prev);
+    }
+  }
 }

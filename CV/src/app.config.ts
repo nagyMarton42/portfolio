@@ -7,6 +7,7 @@ import { TranslateService } from './app/shared/services/translate.service';
 import { initializeApp } from './initialize-factory';
 import { SCROLLING_CONFIG } from './app/shared/services/scrolling.service';
 import { ScrollingConfig } from './app/shared/interfaces/configs.model';
+import { ScrollFunction } from './app/shared/enums/config-enums';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,6 +19,7 @@ export const appConfig: ApplicationConfig = {
       provide: SCROLLING_CONFIG,
       useValue: {
         scrollTime: 1000,
+        scrollFunction: ScrollFunction.EaseInOut,
       } as ScrollingConfig,
     },
     {

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavigationButtonComponent } from './navigation-button/navigation-button.component';
-import { NavigationButtonData } from './nav-bar.model';
+import { Fragments } from 'src/app/shared/resources/fragments';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,9 +11,5 @@ import { NavigationButtonData } from './nav-bar.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavBarComponent {
-  buttonList: NavigationButtonData[] = [
-    { label: 'about', fragment: 'aboutMe' },
-    { label: 'Technical skills', fragment: 'technicalSkills' },
-    { label: 'Professional experience', fragment: 'experience' },
-  ];
+  buttonList = Fragments;
 }
