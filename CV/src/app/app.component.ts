@@ -19,10 +19,11 @@ export class AppComponent {
   constructor(private scrollService: ScrollingService) {}
 
   handleKeyDown(event: KeyboardEvent) {
-    event.preventDefault();
     if (event.key === 'ArrowDown') {
+      event.preventDefault();
       this.scrollService.scrollToNeighbor(ScrollDirection.Next);
     } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
       this.scrollService.scrollToNeighbor(ScrollDirection.Prev);
     }
   }

@@ -17,28 +17,30 @@ export class ScrollingService {
     [ScrollFunction.easeOut]: (t: number) => --t * t * t + 1,
   };
 
-  currentFragment = signal<string>('');
+  currentFragment = signal<string>('aboutMe');
 
-  constructor(private router: Router, private activtedRoute: ActivatedRoute, @Optional() @Inject(SCROLLING_CONFIG) private config: ScrollingConfig) {
+  constructor(private router: Router, @Optional() @Inject(SCROLLING_CONFIG) private config: ScrollingConfig) {
     this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
       const fragment = this.router.url.split('#')[1];
-      this.currentFragment.set(fragment);
       if (fragment) {
-        this.smoothScrollToElement(fragment);
+        this.currentFragment.set(fragment);
+        if (fragment) {
+          this.smoothScrollToElement(fragment);
+        }
       }
     });
   }
 
   public scrollToNeighbor(direction: ScrollDirection) {
     const fragmentIndex = Fragments.findIndex((fragmentData) => fragmentData.fragment === this.currentFragment());
-    let newFragmentIndex: number;
+    let newFragmentIndex;
     if (fragmentIndex > -1 && direction === ScrollDirection.Next && Fragments.length - 1 > fragmentIndex) {
       newFragmentIndex = fragmentIndex + 1;
-    } else if (fragmentIndex && fragmentIndex > 0) {
+    } else if (fragmentIndex && fragmentIndex > 0 && direction === ScrollDirection.Prev) {
       newFragmentIndex = fragmentIndex - 1;
     }
-    if (newFragmentIndex! !== null) {
-      this.router.navigate([], { fragment: Fragments[newFragmentIndex!].fragment });
+    if (newFragmentIndex !== undefined) {
+      this.router.navigate([], { fragment: Fragments[newFragmentIndex!].fragment }).then();
     }
   }
 

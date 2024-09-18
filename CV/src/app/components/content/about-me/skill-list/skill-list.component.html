@@ -1,0 +1,12 @@
+<mat-card (click)="navigateToTechnicalSkills()">
+  <mat-list>
+    @for(skill of skills; track skill.name){
+    <mat-list-item>
+      <div>
+        <div>{{ skill.name }}</div>
+        <mat-progress-bar mode="determinate" [value]="skill.expertise"></mat-progress-bar>
+      </div>
+    </mat-list-item>
+    }
+  </mat-list>
+</mat-card>

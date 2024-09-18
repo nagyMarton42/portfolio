@@ -5,6 +5,7 @@
 @import './themes.scss';
 @import './material.scss';
 @import './variables.scss';
+@import './assets/styles/grid';
 html,
 body {
   height: 100%;
@@ -13,4 +14,15 @@ body {
   overflow: hidden;
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  .flex {
+    display: flex;
+  }
+  .column-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 40.063em) {
+    font-size: 10px;
+  }
 }
