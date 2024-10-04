@@ -2,9 +2,9 @@
 
 @include mat.core();
 
-@import './themes.scss';
-@import './material.scss';
-@import './variables.scss';
+@import './assets/styles/themes';
+@import './assets/styles/material';
+@import './assets/styles/variables';
 @import './assets/styles/grid';
 html,
 body {

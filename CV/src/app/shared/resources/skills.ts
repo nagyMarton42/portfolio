@@ -1,11 +1,13 @@
 import { Skill } from '../enums/common-enums';
-import { skillsData } from '../interfaces/resource.model';
+import { skillData } from '../interfaces/resource.model';
 
-export const skillResource: skillsData[] = [
-  { skill: Skill.Angular, label: 'angularLabel', description: 'angular leírás' },
-  { skill: Skill.CSS, label: 'cssLabel', description: 'CSS leírás' },
-  { skill: Skill.Dotnet, label: 'dotnetLabel', description: '.NET leírás' },
-  { skill: Skill.Octopus, label: 'octopusLabel', description: 'octopus leírás' },
-  { skill: Skill.TSQL, label: 'tsqlLabel', description: 'tsql leírás' },
-  { skill: Skill.Typescript, label: 'tsLabel' },
+export const skillResource: skillData[] = [
+  { type: Skill.Angular, label: 'angularLabel', description: 'angularDescription', expertise: 90 },
+  { type: Skill.Material, label: 'materialLabel', description: 'materialDescription', expertise: 100 },
+  { type: Skill.React, label: 'reactLabel', description: 'reactDescription', expertise: 40 },
+  { type: Skill.Typescript, label: 'tsLabel', description: 'tsDescription', expertise: 80 },
+  { type: Skill.CSS, label: 'cssLabel', description: 'cssDescription', expertise: 90 },
+  { type: Skill.OctopusAzure, label: 'deployLabel', description: 'deployDescription', expertise: 50 },
+  { type: Skill.Dotnet, label: 'dotnetLabel', description: 'dotnetDescription', expertise: 30 },
+  { type: Skill.TSQL, label: 'tsqlLabel', description: 'tsqlDescription', expertise: 30 },
 ];

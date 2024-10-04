@@ -1,0 +1,7 @@
+<div class="ui-g select-for-text-wrapper">
+  <div class="ui-g-3"><app-select-for-text-menu [resource]="resource()" (onSelect)="onSelect($event)" /></div>
+  <div class="ui-g-9">
+    <h2 class="label">{{ label() }}</h2>
+    <div class="description">{{ selectedDescription() | translate }}</div>
+  </div>
+</div>

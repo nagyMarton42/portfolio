@@ -1,4 +1,3 @@
-<div class="ui-g">
-  <div class="ui-g-3 ui-md-2"><app-skill-menu (onSkillSelect)="onSkillSelect($event)" /></div>
-  <div class="ui-g-9 ui-md-4">{{ selectedSkillDescription() }}</div>
+<div class="ui-g technical-skills-wrapper">
+  <div class="ui-g-12"><app-select-for-text [resource]="skillResource" [label]="'technicalSkills' | translate" /></div>
 </div>

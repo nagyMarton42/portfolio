@@ -1,0 +1,9 @@
+<div class="list-container">
+  <mat-list>
+    @for(data of resource(); track data.type){
+    <mat-list-item [ngClass]="{ selected: selectedType() === data.type }" (click)="onClicked(data)">{{ data.label | translate }}</mat-list-item>
+    @if(!$last){
+    <mat-divider></mat-divider>
+    } }
+  </mat-list>
+</div>

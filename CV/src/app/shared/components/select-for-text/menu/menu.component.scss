@@ -1,0 +1,12 @@
+.list-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  mat-list-item:hover {
+    box-shadow: 0px 0px 12px 5px var(--primary-color);
+  }
+  .selected {
+    background-color: var(--primary-color);
+    transition: background-color 0.5s;
+  }
+}

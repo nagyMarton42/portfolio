@@ -1,9 +1,0 @@
-<div class="list-container">
-  <mat-list>
-    @for(skillData of skillResource; track skillData.skill){
-    <mat-list-item (click)="onSkillClicked(skillData)">{{ skillData.label | translate }}</mat-list-item>
-    @if(!$last){
-    <mat-divider></mat-divider>
-    } }
-  </mat-list>
-</div>
